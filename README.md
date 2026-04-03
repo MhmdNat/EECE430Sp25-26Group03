@@ -1,48 +1,34 @@
-# Django Projects
+# voleyPlayerList
 
-This folder contains two Django projects for EECE430 coursework.
+EECE430 Django CRUD project for managing volleyball players.
 
 ## Setup
 
-1. Create the virtual environment (if not already created):
 ```powershell
-cd ..
 python -m venv venv
-cd djangoProjects
-```
-
-2. Activate the virtual environment:
-```powershell
 .\venv\Scripts\Activate.ps1
-```
-
-3. Install dependencies:
-```powershell
 pip install -r requirements.txt
 ```
 
-## Running the Projects
+## Run Locally
 
-### voleyPlayerList (CRUD Project)
 ```powershell
-cd voleyPlayerList
 python manage.py migrate
 python manage.py runserver 0.0.0.0:8000
 ```
-Open browser: `http://localhost:8000/`
 
-### originalVolleySite (Tutorial Project)
+Open: http://localhost:8000/
+
+## Docker Image (GitHub Packages)
+
+This repository is the source code. The Docker image is published as a GitHub Package.
+
+- Image: `ghcr.io/mhmdnat/eece430sp25-26group03:latest`
+- Package page: https://github.com/users/mhmdnat/packages/container/eece430sp25-26group03
+
+Pull and run from GitHub:
+
 ```powershell
-cd originalVolleySite
-python manage.py migrate
-python manage.py runserver 0.0.0.0:8001
+docker pull ghcr.io/mhmdnat/eece430sp25-26group03:latest
+docker run -d -p 8000:8000 --name voleyplayerlist ghcr.io/mhmdnat/eece430sp25-26group03:latest
 ```
-Open browser: `http://localhost:8001/testapp/`
-
-## Admin Panel
-
-For either project, create a superuser:
-```powershell
-python manage.py createsuperuser
-```
-Then visit: `http://localhost:8000/admin` (or port 8001)
