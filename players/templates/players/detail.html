@@ -1,0 +1,40 @@
+{% extends 'players/base.html' %}
+
+{% block content %}
+    <section class="page-card stack">
+        <h2>Player Details</h2>
+
+        <div class="meta-grid">
+            <div class="meta-item">
+                <span class="meta-label">ID</span>
+                <strong>{{ player.id }}</strong>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Name</span>
+                <strong>{{ player.name }}</strong>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Date Joined</span>
+                <strong>{{ player.dateJoined }}</strong>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Position</span>
+                <strong>{{ player.position }}</strong>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Salary</span>
+                <strong>{{ player.salary }}</strong>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Contact Person</span>
+                <strong>{{ player.contactPerson }}</strong>
+            </div>
+        </div>
+
+        <div class="row">
+            <a class="btn btn-primary" href="{% url 'players:update' player.id %}">Edit</a>
+            <a class="btn btn-danger" href="{% url 'players:delete' player.id %}">Delete</a>
+            <a class="btn btn-ghost" href="{% url 'players:list' %}">Back to List</a>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'players/base.html' %}
+
+{% block content %}
+    <section class="page-card stack">
+        <div class="row" style="justify-content: space-between;">
+            <h2>All Players</h2>
+            <a class="btn btn-primary" href="{% url 'players:create' %}">Add New Player</a>
+        </div>
+
+        {% if players %}
+            <ul class="player-list">
+                {% for player in players %}
+                    <li class="player-item">
+                        <div>
+                            <strong>{{ player.name }}</strong>
+                            <div class="muted">Position: {{ player.position }}</div>
+                        </div>
+                        <a class="btn btn-ghost" href="{% url 'players:detail' player.id %}">View Details</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="muted">No players found. Add one to get started.</p>
+        {% endif %}
+    </section>
+{% endblock %}
