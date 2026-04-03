@@ -24,7 +24,7 @@ Open: http://localhost:8000/
 This repository is the source code. The Docker image is published as a GitHub Package.
 
 - Image: `ghcr.io/mhmdnat/eece430sp25-26group03:latest`
-- Package page: https://github.com/users/mhmdnat/packages/container/eece430sp25-26group03
+- Package page: https://github.com/MhmdNat/EECE430Sp25-26Group03/pkgs/container/eece430sp25-26group03
 
 Pull and run from GitHub:
 
